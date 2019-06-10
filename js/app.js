@@ -94,8 +94,10 @@ class Player extends GameRole {
     }
 }
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+const player = new Player('images/char-boy.png', PlayerInititalPosition.x, PlayerInititalPosition.y);
+
+let allEnemies = [];
+
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
@@ -106,3 +108,16 @@ document.addEventListener('keyup', function(e) {
 
     player.handleInput(allowedKeys[e.keyCode]);
 });
+
+const totalEnemy = 100;
+
+for(let i = 0; i < totalEnemy; i++){
+    setTimeout(() => {
+        allEnemies.push(new Enemy('images/enemy-bug.png',  1, initialEnemyPositionY[getRandomInt(5)], player));
+
+    }, i * getRandomInt(5000));
+}
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * Math.floor(max));
+  }
