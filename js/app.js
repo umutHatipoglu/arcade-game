@@ -58,7 +58,41 @@ class Enemy extends GameRole {
      }
 }
 
+class Player extends GameRole {
+    constructor(sprite, x, y){
+        super(sprite, x, y);
+     }
 
+    resetPosition = () => {
+        this.x = PlayerInititalPosition.x;
+        this.y = PlayerInititalPosition.y;
+    };
+
+    handleInput = (direction) => {
+        switch(direction){
+            case "left":
+                if(this.x >= BORDER_LEFT_TOP + STEP_SIZE_X){
+                    this.x = this.x - STEP_SIZE_X;
+                }
+                break;
+            case "right":
+                if(this.x < BORDER_RIGHT - STEP_SIZE_X){
+                    this.x = this.x + STEP_SIZE_X;
+                }
+                break;
+            case "up":
+                if(this.y >= 0){
+                    this.y = this.y - STEP_SIZE_Y;
+                }
+                break;
+            case "down":
+                if(this.y < BORDER_BOTTOM - STEP_SIZE_Y){
+                    this.y = this.y + STEP_SIZE_Y;
+                }
+                break;         
+        }
+    }
+}
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
