@@ -18,9 +18,26 @@ const initialEnemyPositionY = {
     4: 400
 }
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+class GameRole {
+    width = 101;
+    height = 171;
+    speed = getRandomInt(10); 
+    constructor(sprite, x, y){
+        this.sprite = sprite;
+        this.x = x;
+        this.y = y;
+    }
+    update = (dt) => {
+        if(dt){
+            this.x += this.x * (dt) + this.speed;
+        } else if(this.y < 10){
+            this.resetPosition();
+        }
+    }
+    render = () => {
+        ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+    }
+}
 
 
 // Now instantiate your objects.
