@@ -39,10 +39,24 @@ class GameRole {
     }
 }
 
+class Enemy extends GameRole {
+    constructor(sprite, x, y, player){
+        super(sprite, x, y);
+        this.player = player;
+     }
+     checkCollisions = () => {
+        const isCollide = !(
+            ( ( this.y + this.height - 100 ) < ( player.y ) ) ||
+            ( this.y + 100 > ( player.y + player.height ) ) ||
+            ( ( this.x + this.width - 20 ) < player.x ) ||
+            ( this.x + 20> ( player.x + player.width ) )
+        );
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
+        if(isCollide){
+            player.resetPosition();
+        }
+     }
+}
 
 
 
