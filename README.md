@@ -1,3 +1,18 @@
 # Classic Arcade Game Clone Project
 
-Implementation of arcade game project based on requirement [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true)
+## Game logic
+
+The goal of the player is to reach the water, without colliding into any one of the enemies. The player can move left, right, up and down. 
+
+## How to play the game
+
+Player can move the game character by using the arrow keys.
+
+- for moving up: &#8593;
+- for moving down: &#8595;
+- for moving left: &#8592;
+- for moving right: &#8594;
+
+## How to run your project locall
+
+opening index.html should load the game
