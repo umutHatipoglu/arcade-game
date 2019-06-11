@@ -46,10 +46,10 @@ class Enemy extends GameRole {
      }
      checkCollisions = () => {
         const isCollide = !(
-            ( ( this.y + this.height - 100 ) < ( player.y ) ) ||
-            ( this.y + 100 > ( player.y + player.height ) ) ||
-            ( ( this.x + this.width - 20 ) < player.x ) ||
-            ( this.x + 20> ( player.x + player.width ) )
+            ( ( this.y + this.height - 100 ) < ( this.player.y ) ) ||
+            ( this.y + 100 > ( this.player.y + this.player.height ) ) ||
+            ( ( this.x + this.width - 20 ) < this.player.x ) ||
+            ( this.x + 20> ( this.player.x + this.player.width ) )
         );
 
         if(isCollide){
